@@ -1,5 +1,7 @@
 namespace Acme.DynamicUIElements.Abstractions.Tests.Internal
 {
+  using System;
+
   [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
   public class DtoControllerAttribute : Attribute
   {

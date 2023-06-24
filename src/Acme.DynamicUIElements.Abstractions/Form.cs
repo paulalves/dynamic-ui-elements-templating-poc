@@ -1,5 +1,7 @@
 namespace Acme.DynamicUIElements.Abstractions
 {
+  using System.Collections.Generic;
+
   public class Form : UIElement
   {
     private readonly List<InputGroup> groups;
@@ -62,7 +64,7 @@ namespace Acme.DynamicUIElements.Abstractions
       elementVisitor.Visit(this);
     }
 
-    public IReadOnlyList<UIElement> Nodes
+    public override IReadOnlyList<UIElement> Nodes
     {
       get
       {

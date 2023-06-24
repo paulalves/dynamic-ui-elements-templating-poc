@@ -1,5 +1,8 @@
 namespace Acme.DynamicUIElements.Abstractions
 {
+  using System;
+  using System.Collections.Generic;
+
   public abstract class UIElement
   {
     public string Id { get; protected set; }

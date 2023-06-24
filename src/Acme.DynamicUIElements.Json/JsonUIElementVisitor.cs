@@ -1,5 +1,7 @@
 namespace Acme.DynamicUIElements.Json
 {
+  using System;
+  using System.IO;
   using System.Text;
   using Acme.DynamicUIElements.Abstractions;
   using Newtonsoft.Json;

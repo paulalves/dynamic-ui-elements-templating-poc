@@ -1,5 +1,7 @@
 namespace Acme.DynamicUIElements.Abstractions
 {
+  using System;
+
   public interface IUIElementVisitor : IDisposable
   {
     void Visit(Button button);

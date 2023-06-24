@@ -1,6 +1,7 @@
 namespace Acme.DynamicUIElements.Html
 {
   using System.CodeDom.Compiler;
+  using System.IO;
   using System.Text;
   using Acme.DynamicUIElements.Abstractions;
 
