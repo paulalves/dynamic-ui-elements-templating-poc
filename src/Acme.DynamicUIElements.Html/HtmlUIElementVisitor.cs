@@ -81,6 +81,106 @@ namespace Acme.DynamicUIElements.Html
       htmlWriter.WriteLine("</form>");
     }
 
+    public void Visit(InputButton inputButton)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputCheckBox inputCheckBox)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputColor inputColor)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputDate inputDate)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputDateTimeLocal inputDateTimeLocal)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputEmail inputEmail)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputFile inputFile)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputHidden inputHidden)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputImage inputImage)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputMonth inputMonth)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputNumber inputNumber)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputPassword inputPassword)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputRadio inputRadio)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputRange inputRange)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputSearch inputSearch)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputSubmit inputSubmit)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputTel inputTel)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputTime inputTime)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputUrl inputUrl)
+    {
+      throw new System.NotImplementedException();
+    }
+
+    public void Visit(InputWeek inputWeek)
+    {
+      throw new System.NotImplementedException();
+    }
+
     public override string ToString()
     {
       htmlWriter.Flush();

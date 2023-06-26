@@ -99,6 +99,106 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteEndObject();
     }
 
+    public void Visit(InputButton inputButton)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputCheckBox inputCheckBox)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputColor inputColor)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputDate inputDate)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputDateTimeLocal inputDateTimeLocal)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputEmail inputEmail)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputFile inputFile)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputHidden inputHidden)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputImage inputImage)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputMonth inputMonth)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputNumber inputNumber)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputPassword inputPassword)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputRadio inputRadio)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputRange inputRange)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputSearch inputSearch)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputSubmit inputSubmit)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputTel inputTel)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputTime inputTime)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputUrl inputUrl)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Visit(InputWeek inputWeek)
+    {
+      throw new NotImplementedException();
+    }
+
     public override string ToString()
     {
       textWriter.Flush();
