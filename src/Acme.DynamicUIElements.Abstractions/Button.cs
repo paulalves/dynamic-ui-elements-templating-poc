@@ -10,7 +10,8 @@ namespace Acme.DynamicUIElements.Abstractions
     }
 
     public string Text { get; protected set; }
-
+    public ButtonType ButtonType { get; protected set; } = ButtonType.Submit;
+    
     public Button WithId(string id)
     {
       Id = id;
@@ -20,6 +21,12 @@ namespace Acme.DynamicUIElements.Abstractions
     public Button WithText(string text)
     {
       Text = text;
+      return this;
+    }
+    
+    public Button WithButtonType(ButtonType buttonType)
+    {
+      ButtonType = buttonType;
       return this;
     }
   }

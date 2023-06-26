@@ -39,7 +39,7 @@ namespace Acme.DynamicUIElements.Html
     public void Visit(Button button)
     {
       htmlWriter.Indent++;
-      htmlWriter.WriteLine($"<button id='{button.Id}'>{button.Text}</button>");
+      htmlWriter.WriteLine($"<button type='{button.Type}' id='{button.Id}'>{button.Text}</button>");
       htmlWriter.Indent--;
     }
 
