@@ -3,7 +3,7 @@ namespace Acme.DynamicUIElements.Abstractions
   public enum UIElementType
   {
     Button,
-    InputText,
+    Input,
     Label,
     InputGroup,
     Form

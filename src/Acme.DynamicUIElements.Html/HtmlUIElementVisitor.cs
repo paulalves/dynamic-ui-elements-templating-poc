@@ -27,7 +27,7 @@ namespace Acme.DynamicUIElements.Html
         case UIElementType.Label:
           ((Label)element).Accept(this);
           break;
-        case UIElementType.InputText:
+        case UIElementType.Input:
           ((InputText)element).Accept(this);
           break;
         case UIElementType.InputGroup:
@@ -83,7 +83,9 @@ namespace Acme.DynamicUIElements.Html
 
     public void Visit(InputButton inputButton)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputButton.Id}' type='button' value='{inputButton.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputCheckBox inputCheckBox)
