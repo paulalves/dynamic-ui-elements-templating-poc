@@ -90,97 +90,135 @@ namespace Acme.DynamicUIElements.Html
 
     public void Visit(InputCheckBox inputCheckBox)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputCheckBox.Id}' type='checkbox' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputColor inputColor)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputColor.Id}' name='{inputColor.Name}' type='color' value='{inputColor.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputDate inputDate)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputDate.Id}' name='{inputDate.Name}' min='{inputDate.Min}' max='{inputDate.Max}' type='date' value='{inputDate.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputDateTimeLocal inputDateTimeLocal)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputDateTimeLocal.Id}' name='{inputDateTimeLocal.Name}' min='{inputDateTimeLocal.Min}' max='{inputDateTimeLocal.Max}' type='datetime-local' value='{inputDateTimeLocal.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputEmail inputEmail)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputEmail.Id}' type='email' size='{inputEmail.Size}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputFile inputFile)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputFile.Id}' name='{inputFile.Name}' accept='{inputFile.AcceptMime}' type='file' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputHidden inputHidden)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputHidden.Id}' name='{inputHidden.Name}' type='hidden' value='{inputHidden.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputImage inputImage)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputImage.Id}' src='{inputImage.Src}' type='image' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputMonth inputMonth)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputMonth.Id}' name='{inputMonth.Name}' min='{inputMonth.Min}' type='month' value='{inputMonth.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputNumber inputNumber)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputNumber.Id}' name='{inputNumber.Name}' min='{inputNumber.Min}' max='{inputNumber.Max}' type='number'/>");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputPassword inputPassword)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputPassword.Id}' name='{inputPassword.Name}' minlength='{inputPassword.MinLength}' type='password' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputRadio inputRadio)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputRadio.Id}' name='{inputRadio.Name}' type='radio' value='{inputRadio.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputRange inputRange)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputRange.Id}' name='{inputRange.Name}' min='{inputRange.Min}' max='{inputRange.Max}' step='{inputRange.Step}' type='range' value='{inputRange.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputSearch inputSearch)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputSearch.Id}' name='{inputSearch.Name}' type='search' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputSubmit inputSubmit)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputSubmit.Id}' type='submit' value='{inputSubmit.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputTel inputTel)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputTel.Id}' name='{inputTel.Name}' pattern='{inputTel.Pattern}' type='tel' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputTime inputTime)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputTime.Id}' min='{inputTime.Min}' max='{inputTime.Max}' type='time' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputUrl inputUrl)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputUrl.Id}' name='{inputUrl.Name}' placeholder='{inputUrl.Placeholder}' pattern='{inputUrl.Pattern}' type='url' size='{inputUrl.Size}' />");
+      htmlWriter.Indent--;
     }
 
     public void Visit(InputWeek inputWeek)
     {
-      throw new System.NotImplementedException();
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine($"<input id='{inputWeek.Id}' name='{inputWeek.Name}' min='{inputWeek.Min}' max='{inputWeek.Max}' type='week' value='{inputWeek.Value}' />");
+      htmlWriter.Indent--;
     }
 
     public override string ToString()
