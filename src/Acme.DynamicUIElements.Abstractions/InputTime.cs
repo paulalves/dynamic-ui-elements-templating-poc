@@ -12,5 +12,23 @@ namespace Acme.DynamicUIElements.Abstractions
     {
       elementVisitor.Visit(this);
     }
+    
+    public InputTime WithMin(string min)
+    {
+      Min = min;
+      return this;
+    }
+    
+    public InputTime WithMax(string max)
+    {
+      Max = max;
+      return this;
+    }
+    
+    public InputTime WithRequired(bool isRequired)
+    {
+      IsRequired = isRequired;
+      return this;
+    }
   }
 }

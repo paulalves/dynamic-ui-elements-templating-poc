@@ -6,6 +6,12 @@ namespace Acme.DynamicUIElements.Abstractions
     public InputType InputType { get; } = InputType.Search;
     public string Name { get; protected set; }
 
+    public InputSearch WithName(string name)
+    {
+      Name = name;
+      return this;
+    }
+    
     public override void Accept(IUIElementVisitor elementVisitor)
     {
       elementVisitor.Visit(this);

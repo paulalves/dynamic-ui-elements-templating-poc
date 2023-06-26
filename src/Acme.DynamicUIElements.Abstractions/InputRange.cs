@@ -9,6 +9,31 @@ namespace Acme.DynamicUIElements.Abstractions
     public int Max { get; protected set; }
     public int Value { get; protected set; }
     public int Step { get; protected set; }
+    
+    public InputRange WithName(string name)
+    {
+      Name = name;
+      return this;
+    }
+    
+    public InputRange WithMin(int min)
+    {
+      Min = min;
+      return this;
+    }
+    
+    public InputRange WithValue(int value)
+    {
+      Value = value;
+      return this;
+    }
+
+    public InputRange WithStep(int step)
+    {
+      Step = step;
+      return this;
+    }
+    
     public override void Accept(IUIElementVisitor elementVisitor)
     {
       elementVisitor.Visit(this);

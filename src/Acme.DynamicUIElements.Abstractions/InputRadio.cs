@@ -9,6 +9,24 @@ namespace Acme.DynamicUIElements.Abstractions
     public string Value { get; protected set; }
     public bool IsChecked { get; protected set; }
 
+    public InputRadio WithName(string name)
+    {
+      Name = name;
+      return this;
+    }
+
+    public InputRadio WithValue(string value)
+    {
+      Value = value;
+      return this;
+    }
+    
+    public InputRadio WithIsChecked(bool isChecked)
+    {
+      IsChecked = isChecked;
+      return this;
+    }
+    
     public override void Accept(IUIElementVisitor elementVisitor)
     {
       elementVisitor.Visit(this);

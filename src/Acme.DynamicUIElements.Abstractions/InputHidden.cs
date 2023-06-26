@@ -7,6 +7,18 @@ namespace Acme.DynamicUIElements.Abstractions
     public string Name { get; protected set; }
     public string Value { get; protected set; }
 
+    public InputHidden WithName(string name)
+    {
+      Name = name;
+      return this;
+    }
+    
+    public InputHidden WithValue(string value)
+    {
+      Value = value;
+      return this;
+    }
+    
     public override void Accept(IUIElementVisitor elementVisitor)
     {
       elementVisitor.Visit(this);

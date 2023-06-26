@@ -8,6 +8,31 @@ namespace Acme.DynamicUIElements.Abstractions
     public string Value { get; protected set; }
     public int MinLength { get; protected set; }
     public bool IsRequired { get; protected set; }
+    
+    public InputPassword WithName(string name)
+    {
+      Name = name;
+      return this;
+    }
+    
+    public InputPassword WithValue(string value)
+    {
+      Value = value;
+      return this;
+    }
+    
+    public InputPassword WithMinLength(int minLength)
+    {
+      MinLength = minLength;
+      return this;
+    }
+    
+    public InputPassword WithIsRequired(bool isRequired)
+    {
+      IsRequired = isRequired;
+      return this;
+    }
+    
     public override void Accept(IUIElementVisitor elementVisitor)
     {
       elementVisitor.Visit(this);

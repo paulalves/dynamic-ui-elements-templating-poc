@@ -8,6 +8,24 @@ namespace Acme.DynamicUIElements.Abstractions
     public string Min { get; protected set; }
     public string Value { get; protected set; }
 
+    public InputMonth WithName(string name)
+    {
+      Name = name;
+      return this;
+    }
+    
+    public InputMonth WithMin(string min)
+    {
+      Min = min;
+      return this;
+    }
+    
+    public InputMonth WithValue(string value)
+    {
+      Value = value;
+      return this;
+    }
+    
     public override void Accept(IUIElementVisitor elementVisitor)
     {
       elementVisitor.Visit(this);

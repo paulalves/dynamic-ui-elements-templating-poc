@@ -34,5 +34,23 @@ namespace Acme.DynamicUIElements.Abstractions
       TextContent = textContent;
       return this;
     }
+    
+    public InputText WithIsRequired(bool isRequired)
+    {
+      IsRequired = isRequired;
+      return this;
+    }
+    
+    public InputText WithMaxLength(int maxLength)
+    {
+      MaxLength = maxLength;
+      return this;
+    }
+    
+    public InputText WithMinLength(int minLength)
+    {
+      MinLength = minLength;
+      return this;
+    }
   }
 }

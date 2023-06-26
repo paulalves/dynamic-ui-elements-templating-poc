@@ -10,6 +10,36 @@ namespace Acme.DynamicUIElements.Abstractions
     public string Pattern { get; protected set; } = "https?://.+";
     public int Size { get; protected set; }
     
+    public InputUrl WithName(string name)
+    {
+      Name = name;
+      return this;
+    }
+    
+    public InputUrl WithPlaceholder(string placeholder)
+    {
+      Placeholder = placeholder;
+      return this;
+    }
+    
+    public InputUrl WithIsRequired(bool isRequired)
+    {
+      IsRequired = isRequired;
+      return this;
+    }
+    
+    public InputUrl WithPattern(string pattern)
+    {
+      Pattern = pattern;
+      return this;
+    }
+    
+    public InputUrl WithSize(int size)
+    {
+      Size = size;
+      return this;
+    }
+    
     public override void Accept(IUIElementVisitor elementVisitor)
     {
       elementVisitor.Visit(this);
