@@ -60,22 +60,24 @@ namespace Acme.DynamicUIElements.Html
     public void Visit(InputGroup inputGroup)
     {
       htmlWriter.Indent++;
-      htmlWriter.WriteLine($"<fieldset id='{inputGroup.Id}'>");
+      htmlWriter.WriteLine($"<div id='{inputGroup.Id}'>");
       inputGroup.Label.Accept(this);
       inputGroup.InputElement.Accept(this);
-      htmlWriter.WriteLine("</fieldset>");
+      htmlWriter.WriteLine("</div>");
       htmlWriter.Indent--;
     }
 
     public void Visit(Form form)
     {
       htmlWriter.WriteLine($"<form id='{form.Id}' action='{form.Action}' method='{form.Method}'>");
-      //htmlWriter.Indent++;
+      htmlWriter.Indent++;
+      htmlWriter.WriteLine("<fieldset>");
       foreach (var node in form.Nodes)
       {
         node.Accept(this);
       }
-      //htmlWriter.Indent--;
+      htmlWriter.WriteLine("</fieldset>");
+      htmlWriter.Indent--;
       htmlWriter.WriteLine("</form>");
     }
 
