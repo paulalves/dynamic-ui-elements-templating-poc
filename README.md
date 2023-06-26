@@ -72,23 +72,25 @@ HTML
 
 ```html
 <form id='ContactForm' action='api/v1/Contacts/CreateContact' method='POST'>
-    <fieldset id='IdFormGroup'>
-        <label id='lblId' for='Id'>Id</label>
-        <input id='Id' type='text' placeholder='Enter the id' value='' />
+    <fieldset>
+        <div id='IdFormGroup'>
+            <label id='lblId' for='Id'>Id</label>
+            <input id='Id' type='text' placeholder='Enter the id' value='' />
+        </div>
+        <div id='NameFormGroup'>
+            <label id='lblName' for='Name'>Name</label>
+            <input id='Name' type='text' placeholder='Enter the name' value='' />
+        </div>
+        <div id='PhoneFormGroup'>
+            <label id='lblPhone' for='Phone'>Phone</label>
+            <input id='Phone' type='text' placeholder='Enter the phone number' value='' />
+        </div>
+        <div id='EmailFormGroup'>
+            <label id='lblEmail' for='Email'>Email</label>
+            <input id='Email' type='text' placeholder='Enter the email address' value='' />
+        </div>
+        <button type='Button' id='btnSubmit'>Submit</button>
     </fieldset>
-    <fieldset id='NameFormGroup'>
-        <label id='lblName' for='Name'>Name</label>
-        <input id='Name' type='text' placeholder='Enter the name' value='' />
-    </fieldset>
-    <fieldset id='PhoneFormGroup'>
-        <label id='lblPhone' for='Phone'>Phone</label>
-        <input id='Phone' type='text' placeholder='Enter the phone number' value='' />
-    </fieldset>
-    <fieldset id='EmailFormGroup'>
-        <label id='lblEmail' for='Email'>Email</label>
-        <input id='Email' type='text' placeholder='Enter the email address' value='' />
-    </fieldset>
-    <button id=''>Submit</button>
 </form>
 ```
 
@@ -113,7 +115,8 @@ JSON
         },
         {
           "id": "Id",
-          "type": "InputText",
+          "type": "Input",
+          "inputType": "Text",
           "placeholder": "Enter the id",
           "value": ""
         }
@@ -131,7 +134,8 @@ JSON
         },
         {
           "id": "Name",
-          "type": "InputText",
+          "type": "Input",
+          "inputType": "Text",
           "placeholder": "Enter the name",
           "value": ""
         }
@@ -149,7 +153,8 @@ JSON
         },
         {
           "id": "Phone",
-          "type": "InputText",
+          "type": "Input",
+          "inputType": "Text",
           "placeholder": "Enter the phone number",
           "value": ""
         }
@@ -167,7 +172,8 @@ JSON
         },
         {
           "id": "Email",
-          "type": "InputText",
+          "type": "Input",
+          "inputType": "Text",
           "placeholder": "Enter the email address",
           "value": ""
         }
