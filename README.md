@@ -71,26 +71,26 @@ new Form().With(new[]
 HTML
 
 ```html
-<form id='ContactForm' action='api/v1/Contacts/CreateContact' method='POST'>
+<form id='contactForm' action='api/v1/Contacts/CreateContact' method='POST'>
     <fieldset>
-        <div id='IdFormGroup'>
-            <label id='lblId' for='Id'>Id</label>
-            <input id='Id' type='text' placeholder='Enter the id' value='' />
+        <div id='idFormGroup'>
+            <label id='lblId' for='id'>Id</label>
+            <input type='text' id='id' placeholder='Enter the id' value=''/>
         </div>
-        <div id='NameFormGroup'>
-            <label id='lblName' for='Name'>Name</label>
-            <input id='Name' type='text' placeholder='Enter the name' value='' />
+        <div id='nameFormGroup'>
+            <label id='lblName' for='name'>Name</label>
+            <input type='text' id='name' placeholder='Enter the name' value=''/>
         </div>
-        <div id='PhoneFormGroup'>
-            <label id='lblPhone' for='Phone'>Phone</label>
-            <input id='Phone' type='text' placeholder='Enter the phone number' value='' />
+        <div id='phoneFormGroup'>
+            <label id='lblPhone' for='phone'>Phone</label>
+            <input type='text' id='phone' placeholder='Enter the phone number' value=''/>
         </div>
-        <div id='EmailFormGroup'>
-            <label id='lblEmail' for='Email'>Email</label>
-            <input id='Email' type='text' placeholder='Enter the email address' value='' />
+        <div id='emailFormGroup'>
+            <label id='lblEmail' for='email'>Email</label>
+            <input type='text' id='email' placeholder='Enter the email address' value=''/>
         </div>
-        <button type='Button' id='btnSubmit'>Submit</button>
     </fieldset>
+    <button type='Submit' id='btnSubmit' class='btn btn-primary' role='button'>Submit</button>
 </form>
 ```
 
@@ -98,23 +98,23 @@ JSON
 
 ```json
 {
-  "id": "ContactForm",
+  "id": "contactForm",
   "type": "Form",
   "action": "api/v1/Contacts/CreateContact",
   "method": "POST",
   "nodes": [
     {
-      "id": "IdFormGroup",
+      "id": "idFormGroup",
       "type": "InputGroup",
       "nodes": [
         {
           "id": "lblId",
           "type": "Label",
-          "for": "Id",
+          "for": "id",
           "text": "Id"
         },
         {
-          "id": "Id",
+          "id": "id",
           "type": "Input",
           "inputType": "Text",
           "placeholder": "Enter the id",
@@ -123,17 +123,17 @@ JSON
       ]
     },
     {
-      "id": "NameFormGroup",
+      "id": "nameFormGroup",
       "type": "InputGroup",
       "nodes": [
         {
           "id": "lblName",
           "type": "Label",
-          "for": "Name",
+          "for": "name",
           "text": "Name"
         },
         {
-          "id": "Name",
+          "id": "name",
           "type": "Input",
           "inputType": "Text",
           "placeholder": "Enter the name",
@@ -142,17 +142,17 @@ JSON
       ]
     },
     {
-      "id": "PhoneFormGroup",
+      "id": "phoneFormGroup",
       "type": "InputGroup",
       "nodes": [
         {
           "id": "lblPhone",
           "type": "Label",
-          "for": "Phone",
+          "for": "phone",
           "text": "Phone"
         },
         {
-          "id": "Phone",
+          "id": "phone",
           "type": "Input",
           "inputType": "Text",
           "placeholder": "Enter the phone number",
@@ -161,17 +161,17 @@ JSON
       ]
     },
     {
-      "id": "EmailFormGroup",
+      "id": "emailFormGroup",
       "type": "InputGroup",
       "nodes": [
         {
           "id": "lblEmail",
           "type": "Label",
-          "for": "Email",
+          "for": "email",
           "text": "Email"
         },
         {
-          "id": "Email",
+          "id": "email",
           "type": "Input",
           "inputType": "Text",
           "placeholder": "Enter the email address",
@@ -182,7 +182,15 @@ JSON
     {
       "id": "btnSubmit",
       "type": "Button",
-      "text": "Submit"
+      "text": "Submit",
+      "attributes": [
+        {
+          "class": "btn btn-primary"
+        },
+        {
+          "role": "button"
+        }
+      ]
     }
   ]
 }
