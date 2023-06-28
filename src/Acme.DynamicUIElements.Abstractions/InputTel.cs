@@ -10,7 +10,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public InputTel WithName(string name)
     {
-      Name = name;
+      Name = name.ToCamelCase(); 
       return this;
     }
     

@@ -9,7 +9,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public InputHidden WithName(string name)
     {
-      Name = name;
+      Name = name.ToCamelCase(); 
       return this;
     }
     

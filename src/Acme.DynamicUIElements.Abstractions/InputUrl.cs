@@ -12,7 +12,7 @@ namespace Acme.DynamicUIElements.Abstractions
     
     public InputUrl WithName(string name)
     {
-      Name = name;
+      Name = name.ToCamelCase(); 
       return this;
     }
     

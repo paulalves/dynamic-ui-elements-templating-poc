@@ -10,7 +10,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public InputMonth WithName(string name)
     {
-      Name = name;
+      Name = name.ToCamelCase(); 
       return this;
     }
     

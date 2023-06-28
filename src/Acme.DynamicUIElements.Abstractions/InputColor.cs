@@ -9,7 +9,7 @@ namespace Acme.DynamicUIElements.Abstractions
     
     public InputColor WithName(string name)
     {
-      Name = name;
+      Name = name.ToCamelCase(); 
       return this;
     }
     

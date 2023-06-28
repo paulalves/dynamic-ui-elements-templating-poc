@@ -13,13 +13,13 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public Label WithId(string id)
     {
-      Id = id;
+      Id = id.ToCamelCase();
       return this;
     }
 
     public Label WithFor(string @for)
     {
-      For = @for;
+      For = @for.ToCamelCase();
       return this;
     }
 

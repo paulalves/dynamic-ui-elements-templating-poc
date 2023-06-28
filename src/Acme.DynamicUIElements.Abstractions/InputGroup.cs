@@ -30,7 +30,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public InputGroup WithId(string id)
     {
-      Id = id;
+      Id = id.ToCamelCase();
       return this;
     }
 

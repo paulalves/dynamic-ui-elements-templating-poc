@@ -14,7 +14,7 @@ namespace Acme.DynamicUIElements.Abstractions
     
     public Button WithId(string id)
     {
-      Id = id;
+      Id = id.ToCamelCase();
       return this;
     }
 

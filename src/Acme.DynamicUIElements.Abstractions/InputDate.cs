@@ -11,7 +11,7 @@ namespace Acme.DynamicUIElements.Abstractions
     
     public InputDate WithName(string name)
     {
-      Name = name;
+      Name = name.ToCamelCase(); 
       return this;
     }
     

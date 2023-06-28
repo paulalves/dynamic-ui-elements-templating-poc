@@ -19,7 +19,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public InputText WithId(string id)
     {
-      Id = id;
+      Id = id.ToCamelCase();
       return this;
     }
 

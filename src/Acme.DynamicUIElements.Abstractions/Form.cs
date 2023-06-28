@@ -55,7 +55,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public Form WithId(string id)
     {
-      Id = id;
+      Id = id.ToCamelCase();
       return this;
     }
 

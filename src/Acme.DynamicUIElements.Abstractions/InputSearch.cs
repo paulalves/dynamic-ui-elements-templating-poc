@@ -8,7 +8,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public InputSearch WithName(string name)
     {
-      Name = name;
+      Name = name.ToCamelCase(); 
       return this;
     }
     
