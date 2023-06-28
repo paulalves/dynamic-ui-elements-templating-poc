@@ -25,6 +25,12 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public abstract void Accept(IUIElementVisitor elementVisitor);
 
+    public UIElement WithAttribute(string name)
+    {
+      attributes.Add(new UIAttribute(name));
+      return this;
+    }
+    
     public UIElement WithAttribute(string name, string value)
     {
       attributes.Add(new UIAttribute(name, value));

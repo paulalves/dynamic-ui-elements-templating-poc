@@ -28,9 +28,30 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(button.Type.ToString());
       jsonWriter.WritePropertyName("text");
       jsonWriter.WriteValue(button.Text);
+      if (button.Attributes.Count > 0)
+      {
+        WriteAttributes(button);
+      }
       jsonWriter.WriteEndObject();
     }
 
+    private void WriteAttributes(UIElement element)
+    {
+      jsonWriter.WritePropertyName("attributes");
+      jsonWriter.WriteStartArray();
+      for (var attributeIndex = 0; attributeIndex < element.Attributes.Count; attributeIndex++)
+      {
+        jsonWriter.WriteStartObject();
+
+        jsonWriter.WritePropertyName(element.Attributes[attributeIndex].Name);
+        jsonWriter.WriteValue(element.Attributes[attributeIndex].Value);
+
+        jsonWriter.WriteEndObject();
+
+      }
+      jsonWriter.WriteEndArray();
+    }
+    
     public void Visit(InputText inputText)
     {
       jsonWriter.WriteStartObject();
@@ -44,6 +65,12 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputText.PlaceHolder);
       jsonWriter.WritePropertyName("value");
       jsonWriter.WriteValue(inputText.TextContent);
+      
+      if (inputText.Attributes.Count > 0)
+      {
+        WriteAttributes(inputText);
+      }
+
       jsonWriter.WriteEndObject();
     }
 
@@ -58,6 +85,12 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(label.For);
       jsonWriter.WritePropertyName("text");
       jsonWriter.WriteValue(label.Text);
+      
+      if (label.Attributes.Count > 0)
+      {
+        WriteAttributes(label);
+      }
+      
       jsonWriter.WriteEndObject();
     }
 
@@ -76,10 +109,14 @@ namespace Acme.DynamicUIElements.Json
       }
 
       jsonWriter.WriteEndArray();
+      if (inputGroup.Attributes.Count > 0)
+      {
+        WriteAttributes(inputGroup);
+      }
       jsonWriter.WriteEndObject();
     }
 
-    public void Visit(Form form)
+    public void Visit(Form form)  
     {
       jsonWriter.WriteStartObject();
       jsonWriter.WritePropertyName("id");
@@ -96,8 +133,12 @@ namespace Acme.DynamicUIElements.Json
       {
         node.Accept(this);
       }
-
+      form.Button.Accept(this);
       jsonWriter.WriteEndArray();
+      if (form.Attributes.Count > 0)
+      {
+        WriteAttributes(form);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -110,6 +151,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputButton.Type.ToString());
       jsonWriter.WritePropertyName("inputType");
       jsonWriter.WriteValue(inputButton.InputType.ToString());
+      if (inputButton.Attributes.Count > 0)
+      {
+        WriteAttributes(inputButton);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -122,6 +167,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputCheckBox.Type.ToString());
       jsonWriter.WritePropertyName("inputType");
       jsonWriter.WriteValue(inputCheckBox.InputType.ToString());
+      if (inputCheckBox.Attributes.Count > 0)
+      {
+        WriteAttributes(inputCheckBox);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -138,6 +187,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputColor.Name);
       jsonWriter.WritePropertyName("value");
       jsonWriter.WriteValue(inputColor.Value);
+      if (inputColor.Attributes.Count > 0)
+      {
+        WriteAttributes(inputColor);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -158,6 +211,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputDate.Min);
       jsonWriter.WritePropertyName("max");
       jsonWriter.WriteValue(inputDate.Max);
+      if (inputDate.Attributes.Count > 0)
+      {
+        WriteAttributes(inputDate);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -178,6 +235,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputDateTimeLocal.Min);
       jsonWriter.WritePropertyName("max");
       jsonWriter.WriteValue(inputDateTimeLocal.Max);
+      if (inputDateTimeLocal.Attributes.Count > 0)
+      {
+        WriteAttributes(inputDateTimeLocal);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -194,6 +255,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputEmail.Pattern);
       jsonWriter.WritePropertyName("size");
       jsonWriter.WriteValue(inputEmail.Size);
+      if (inputEmail.Attributes.Count > 0)
+      {
+        WriteAttributes(inputEmail);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -210,6 +275,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputFile.Name);
       jsonWriter.WritePropertyName("accept");
       jsonWriter.WriteValue(inputFile.AcceptMime);
+      if (inputFile.Attributes.Count > 0)
+      {
+        WriteAttributes(inputFile);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -226,6 +295,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputHidden.Name);
       jsonWriter.WritePropertyName("value");
       jsonWriter.WriteValue(inputHidden.Value);
+      if (inputHidden.Attributes.Count > 0)
+      {
+        WriteAttributes(inputHidden);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -242,6 +315,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputImage.Alt);
       jsonWriter.WritePropertyName("src");
       jsonWriter.WriteValue(inputImage.Src);
+      if (inputImage.Attributes.Count > 0)
+      {
+        WriteAttributes(inputImage);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -260,6 +337,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputMonth.Min);
       jsonWriter.WritePropertyName("value");
       jsonWriter.WriteValue(inputMonth.Value);
+      if (inputMonth.Attributes.Count > 0)
+      {
+        WriteAttributes(inputMonth);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -276,6 +357,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputNumber.Min);
       jsonWriter.WritePropertyName("max");
       jsonWriter.WriteValue(inputNumber.Max);
+      if (inputNumber.Attributes.Count > 0)
+      {
+        WriteAttributes(inputNumber);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -294,6 +379,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputPassword.MinLength);
       jsonWriter.WritePropertyName("required");
       jsonWriter.WriteValue(inputPassword.IsRequired);
+      if (inputPassword.Attributes.Count > 0)
+      {
+        WriteAttributes(inputPassword);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -312,6 +401,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputRadio.Value);
       jsonWriter.WritePropertyName("checked");
       jsonWriter.WriteValue(inputRadio.IsChecked);
+      if (inputRadio.Attributes.Count > 0)
+      {
+        WriteAttributes(inputRadio);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -332,6 +425,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputRange.Value);
       jsonWriter.WritePropertyName("step");
       jsonWriter.WriteValue(inputRange.Step);
+      if (inputRange.Attributes.Count > 0)
+      {
+        WriteAttributes(inputRange);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -346,6 +443,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputSearch.InputType.ToString());
       jsonWriter.WritePropertyName("name");
       jsonWriter.WriteValue(inputSearch.Name);
+      if (inputSearch.Attributes.Count > 0)
+      {
+        WriteAttributes(inputSearch);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -360,6 +461,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputSubmit.InputType.ToString());
       jsonWriter.WritePropertyName("value");
       jsonWriter.WriteValue(inputSubmit.Value);
+      if (inputSubmit.Attributes.Count > 0)
+      {
+        WriteAttributes(inputSubmit);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -378,6 +483,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputTel.Pattern);
       jsonWriter.WritePropertyName("required");
       jsonWriter.WriteValue(inputTel.IsRequired);
+      if (inputTel.Attributes.Count > 0)
+      {
+        WriteAttributes(inputTel);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -396,6 +505,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputTime.Max);
       jsonWriter.WritePropertyName("required");
       jsonWriter.WriteValue(inputTime.IsRequired);
+      if (inputTime.Attributes.Count > 0)
+      {
+        WriteAttributes(inputTime);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -418,6 +531,10 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputUrl.IsRequired);
       jsonWriter.WritePropertyName("size");
       jsonWriter.WriteValue(inputUrl.Size);
+      if (inputUrl.Attributes.Count > 0)
+      {
+        WriteAttributes(inputUrl);
+      }
       jsonWriter.WriteEndObject();
     }
 
@@ -436,6 +553,11 @@ namespace Acme.DynamicUIElements.Json
       jsonWriter.WriteValue(inputWeek.Max);
       jsonWriter.WritePropertyName("required");
       jsonWriter.WriteValue(inputWeek.IsRequired);
+      
+      if (inputWeek.Attributes.Count > 0)
+      {
+        WriteAttributes(inputWeek);
+      }
       jsonWriter.WriteEndObject();
     }
 

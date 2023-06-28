@@ -70,7 +70,6 @@ namespace Acme.DynamicUIElements.Abstractions
       {
         var elements = new List<UIElement>();
         elements.AddRange(Groups);
-        elements.Add(Button);
         return elements.AsReadOnly();
       }
     }

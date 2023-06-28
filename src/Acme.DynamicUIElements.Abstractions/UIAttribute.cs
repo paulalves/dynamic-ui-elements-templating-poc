@@ -8,6 +8,12 @@ namespace Acme.DynamicUIElements.Abstractions
       Value = value;
     }
 
+    public UIAttribute(string name)
+    {
+      Name = name.ToCamelCase();
+      Value = null;
+    }
+    
     public string Name { get; protected set; }
     public string Value { get; protected set; }
   }

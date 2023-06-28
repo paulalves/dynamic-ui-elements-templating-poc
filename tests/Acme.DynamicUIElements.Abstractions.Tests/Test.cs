@@ -35,17 +35,19 @@ namespace Acme.DynamicUIElements.Abstractions.Tests
                 .WithPlaceHolder("Enter your name")
                 .WithValue("Paul Alves")
             ),
-        }).WithId("myForm")
+        })
+        .WithId("myForm")
         .WithAction("/contacts")
         .WithMethod("POST")
         .WithButton(new Button()
-          .WithId("btnSubmit")
-          .WithText("Submit"));
+        .WithId("btnSubmit")
+        .WithText("Submit"));
     }
 
     [Fact]
     public void TraverseToHtmlTests()
     {
+      
       using (var htmlElementVisitor = new HtmlUIElementVisitor())
       {
         GetUIComponentTree()
@@ -54,6 +56,7 @@ namespace Acme.DynamicUIElements.Abstractions.Tests
         var rawHtml = htmlElementVisitor.ToString();
         output.WriteLine(rawHtml);
       }
+      
     }
 
     [Fact]
@@ -97,7 +100,14 @@ namespace Acme.DynamicUIElements.Abstractions.Tests
               .WithId(prop.Name)
               .WithPlaceHolder(placeHolderAttribute.PlaceHolder ?? $"Enter the {prop.Name}")
               .WithValue(placeHolderAttribute.DefaultValue ?? "")
-          )).WithButton(new Button().WithId("btnSubmit").WithText("Submit"));
+          )).WithButton(
+          new Button()
+            .WithId("btnSubmit")
+            .WithText("Submit")
+            .WithAttribute(
+              "class",
+              "btn btn-primary")
+            .WithAttribute("role", "button") as Button);
       }
 
       using (var htmlElementVisitor = new HtmlUIElementVisitor())
