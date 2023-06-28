@@ -4,7 +4,7 @@ namespace Acme.DynamicUIElements.Abstractions.Tests
   using Acme.DynamicUIElements.Abstractions.Tests.Internal;
   using Acme.DynamicUIElements.Html;
   using Acme.DynamicUIElements.Json;
-
+  using FluentAssertions;
   using Xunit;
   using Xunit.Abstractions;
 
@@ -122,6 +122,123 @@ namespace Acme.DynamicUIElements.Abstractions.Tests
         output.WriteLine(rawHtml);
         output.WriteLine(rawJson);
       }
+    }
+
+    [Fact]
+    public void ParseJson()
+    {
+      var jsonInput = GetJson();
+      var jsonElementParser = new JsonUIElementParser();
+      var uiElement = jsonElementParser.Parse(jsonInput);
+
+      var jsonElementVisitor = new JsonUIElementVisitor();
+      uiElement.Accept(jsonElementVisitor);
+      
+      var jsonResult = jsonElementVisitor.ToString();
+      jsonResult.Should().BeEquivalentTo(jsonInput);
+    }
+
+    private string GetJson()
+    {
+         return """
+{
+  "id": "contactForm",
+      "type": "Form",
+      "action": "api/v1/Contacts/CreateContact",
+      "method": "POST",
+      "nodes": [
+      {
+        "id": "idFormGroup",
+        "type": "InputGroup",
+        "nodes": [
+        {
+          "id": "lblId",
+          "type": "Label",
+          "for": "id",
+          "text": "Id"
+        },
+        {
+          "id": "id",
+          "type": "Input",
+          "inputType": "Text",
+          "placeholder": "Enter the id",
+          "value": ""
+        }
+        ]
+      },
+      {
+        "id": "nameFormGroup",
+        "type": "InputGroup",
+        "nodes": [
+        {
+          "id": "lblName",
+          "type": "Label",
+          "for": "name",
+          "text": "Name"
+        },
+        {
+          "id": "name",
+          "type": "Input",
+          "inputType": "Text",
+          "placeholder": "Enter the name",
+          "value": ""
+        }
+        ]
+      },
+      {
+        "id": "phoneFormGroup",
+        "type": "InputGroup",
+        "nodes": [
+        {
+          "id": "lblPhone",
+          "type": "Label",
+          "for": "phone",
+          "text": "Phone"
+        },
+        {
+          "id": "phone",
+          "type": "Input",
+          "inputType": "Text",
+          "placeholder": "Enter the phone number",
+          "value": ""
+        }
+        ]
+      },
+      {
+        "id": "emailFormGroup",
+        "type": "InputGroup",
+        "nodes": [
+        {
+          "id": "lblEmail",
+          "type": "Label",
+          "for": "email",
+          "text": "Email"
+        },
+        {
+          "id": "email",
+          "type": "Input",
+          "inputType": "Text",
+          "placeholder": "Enter the email address",
+          "value": ""
+        }
+        ]
+      },
+      {
+        "id": "btnSubmit",
+        "type": "Button",
+        "text": "Submit",
+        "attributes": [
+        {
+          "class": "btn btn-primary"
+        },
+        {
+          "role": "button"
+        }
+        ]
+      }
+      ]
+    }
+""";
     }
   }
 }

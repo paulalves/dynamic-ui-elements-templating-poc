@@ -12,7 +12,7 @@ namespace Acme.DynamicUIElements.Abstractions
       groups = new List<InputGroup>();
     }
 
-    public Form() : this(new Button().WithText("Submit"))
+    public Form()
     {
     }
 
