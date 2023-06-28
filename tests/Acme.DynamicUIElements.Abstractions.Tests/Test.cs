@@ -47,7 +47,6 @@ namespace Acme.DynamicUIElements.Abstractions.Tests
     [Fact]
     public void TraverseToHtmlTests()
     {
-      
       using (var htmlElementVisitor = new HtmlUIElementVisitor())
       {
         GetUIComponentTree()
@@ -56,7 +55,6 @@ namespace Acme.DynamicUIElements.Abstractions.Tests
         var rawHtml = htmlElementVisitor.ToString();
         output.WriteLine(rawHtml);
       }
-      
     }
 
     [Fact]

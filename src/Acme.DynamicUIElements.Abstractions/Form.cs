@@ -14,6 +14,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public Form()
     {
+      groups = new List<InputGroup>();
     }
 
     public override UIElementType Type { get; } = UIElementType.Form;
@@ -31,12 +32,18 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public Form With(InputGroup group)
     {
+      group.WithParent(this);
       groups.Add(group);
       return this;
     }
 
     public Form With(InputGroup[] groups)
     {
+      for (var g = 0; g < groups.Length; g++)
+      {
+         groups[g].WithParent(this);
+      }
+      
       this.groups.AddRange(groups);
       return this;
     }
@@ -76,6 +83,7 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public Form WithButton(Button button)
     {
+      button.WithParent(this);
       Button = button;
       return this;
     }

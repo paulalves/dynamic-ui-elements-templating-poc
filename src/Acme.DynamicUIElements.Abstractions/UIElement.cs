@@ -18,6 +18,8 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public virtual IReadOnlyList<UIElement> Nodes { get; } = Array.Empty<UIElement>();
 
+    public UIElement Parent { get; internal set; }
+    
     public virtual IReadOnlyList<UIAttribute> Attributes
     {
       get { return attributes; }
@@ -25,6 +27,12 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public abstract void Accept(IUIElementVisitor elementVisitor);
 
+    public UIElement WithParent(UIElement parent)
+    {
+      Parent = parent;
+      return this; 
+    }
+    
     public UIElement WithAttribute(string name)
     {
       attributes.Add(new UIAttribute(name));

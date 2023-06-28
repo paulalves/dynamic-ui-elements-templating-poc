@@ -36,12 +36,14 @@ namespace Acme.DynamicUIElements.Abstractions
 
     public InputGroup WithLabel(Label label)
     {
+      label.WithParent(this);
       Label = label;
       return this;
     }
 
     public InputGroup WithInputElement(InputElement inputElement)
     {
+      inputElement.WithParent(this);
       InputElement = inputElement;
       return this;
     }
